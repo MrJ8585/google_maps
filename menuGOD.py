@@ -17,8 +17,12 @@ def make_array():
         j = i.split()
         for n in j:
             out.append(float(n))
+    nodos = []
     for i in range(int(out[0])):
-        functions.node(out[1], out[3], out[2], out[4])
+        nodos.append(functions.node(out[1], out[3], out[2], out[4]))
+    matrix = functions.matrix(nodos)
+    for i in matrix:
+        print(i)
 
 #Set UP
 root = tk.Tk()
