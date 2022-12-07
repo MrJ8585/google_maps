@@ -89,4 +89,3 @@ map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z
 map_widget.set_address("Ensenada Baja California Mexico")
 
 root.mainloop()
-
