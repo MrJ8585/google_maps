@@ -11,7 +11,10 @@ url3 = "&origins="
 url4 = str(b[0]) + ',' +  str(b[1])
 url5 = "&units=imperial&key="
 url_f = url1 + url2 + url3 + url4 + url5 + KEY
+url_f2 = url1 + url4 + url3 + url2 + url5 + KEY
 print(url_f)
 output = requests.get(url_f).json()
-a = output['rows'][0]['elements'][0]['distance']['value']
-print(a)
+output2 = requests.get(url_f2).json()
+aa = output['rows'][0]['elements'][0]['distance']['value']
+bb = output2['rows'][0]['elements'][0]['distance']['value']
+print(aa==bb)
