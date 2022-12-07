@@ -4,6 +4,7 @@ from tkinter import *
 menu_window = tkinter.Tk()
 menu_window.geometry(f"{300}x{100}")
 menu_window.title("Menu")
+menu_window.resizable(False, False)
 
 label = Label(menu_window,text="N. de Ubicacion")
 label.pack()
