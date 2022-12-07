@@ -16,6 +16,19 @@ def node(x1, x2, y1, y2):
     else:
         node(x1, x2, y1, y2)
 
+def ultimo_momento(a, b):
+    KEY = 'AIzaSyCBtjf6MEDd1ZOVSOJ-M5WFcMT2U_8Y8Eg'
+    url1 = "https://maps.googleapis.com/maps/api/directions/json?origin="
+    url2 = str(a[0]) + ',' + str(a[1])
+    url3 = "&destination="
+    url4 = str(b[0]) + ',' +  str(b[1])
+    url5 = "&key="
+    url_f = url1 + url2 + url3 + url4 + url5 + KEY
+    output = requests.get(url_f).json()
+    values = output['routes'][0]['legs'][0]['steps']
+    for i in values:
+        print(i['html_instructions']) 
+
 #Verifica que este dentro de los limites el nodo
 def in_bounds(x1, x2, y1, y2, inputx, inputy):
     if (x1 <= inputx <= x2) and (y2 <= inputy <= y1):

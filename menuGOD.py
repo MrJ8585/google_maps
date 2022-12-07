@@ -28,6 +28,8 @@ def make_array():
 
     #Se hace la matriz de adyacencia
     matrix = functions.matrix(nodos)
+    for i in matrix:
+        print(i)
 
     #Se hacen -1 todos los index 0
     functions.make_ones(matrix, 0)
@@ -35,11 +37,15 @@ def make_array():
     idx = 0
 
     #Loop para conseguir la distancia total
+    m = []
     for i in range(places-1):
         curr = functions.find_shortest(matrix, idx)
         matrix = curr[0]
         total += curr[1]
+        functions.ultimo_momento(nodos[idx], nodos[curr[2]])
+        m.append([idx, curr[2]])
         idx = curr[2]
+    print(m)
 
     #Resultado
     distancia_total.insert(tk.END, total)
